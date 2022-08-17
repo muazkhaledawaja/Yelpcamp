@@ -18,7 +18,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 
 
 
-const MongoStore =  require('connect-mongo')(session);
+const MongoStore =  require('connect-mongo');
 
 
 const userRoutes = require('./routes/users');
@@ -55,7 +55,7 @@ app.use(mongoSanitize({
 
 const secret = process.env.SECRET ||  'thisshouldbeabettersecret!';
 
-const store = new MongoStore ({
+const store =  MongoStore.create({
     url: dbUrl,
     secret,
     touchAfter: 24*60*60,
