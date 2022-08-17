@@ -18,7 +18,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 
 
 
-const MongoStore =  require('connect-mongo').default;
+const MongoStore =  require('connect-mongo');
 
 
 const userRoutes = require('./routes/users');
